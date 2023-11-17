@@ -59,6 +59,7 @@ async function run() {
       .db("shebaPro")
       .collection("allServices");
     const serviceCollection = client.db("shebaPro").collection("services");
+    const bookingCollection = client.db("shebaPro").collection("bookings");
 
     // auth related api
     app.post("/jwt", logger, async (req, res) => {
@@ -98,6 +99,12 @@ async function run() {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await allServiceCollection.findOne(query);
+      res.send(result);
+    });
+    // to post booked service data
+    app.post("/bookings", async (req, res) => {
+      const service = req.body;
+      const result = await bookingCollection.insertOne(service);
       res.send(result);
     });
     // services related api

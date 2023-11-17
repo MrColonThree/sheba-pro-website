@@ -1,14 +1,21 @@
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsInstagram, BsStarFill, BsWhatsapp } from "react-icons/bs";
 import { LuFacebook } from "react-icons/lu";
 import { GrSelect } from "react-icons/gr";
-import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
-
+import { useState } from "react";
+import BookingModal from "./BookingModal";
 const ServiceDetails = () => {
   const { title, service, long_details, price, rating, short_details } =
     useLoaderData();
+  const [isOpen, setIsOpen] = useState(false);
+  const bookInfo = { title, service, price };
+  const openModal = () => {
+    setIsOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
   return (
     <div className="container mx-auto px-5">
       <div className="text-gray-600 body-font overflow-hidden">
@@ -28,14 +35,7 @@ const ServiceDetails = () => {
               </h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
-                  <Rating
-                    initialRating={rating}
-                    emptySymbol={
-                      <AiOutlineStar className="text-xl text-red-500" />
-                    }
-                    fullSymbol={<AiFillStar className="text-xl text-red-500" />}
-                    readonly
-                  ></Rating>
+                  <BsStarFill className="text-red-500 text-lg" />
                   <p className="text-gray-600 mx-3">{rating}</p>
                 </span>
                 <span className="flex gap-2 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
@@ -46,11 +46,14 @@ const ServiceDetails = () => {
               </div>
               <h3 className="text-lg font-semibold mb-1">{short_details}</h3>
               <p className="leading-relaxed">{long_details}</p>
-              <div className="flex mt-5">
+              <div className="flex mt-5 relative">
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ${price.min} - ${price.max}
                 </span>
-                <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+                <button
+                  onClick={openModal}
+                  className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"
+                >
                   Booking
                 </button>
                 <button
@@ -59,6 +62,11 @@ const ServiceDetails = () => {
                 >
                   <GrSelect className="text-xl" />
                 </button>
+                <BookingModal
+                  closeModal={closeModal}
+                  bookInfo={bookInfo}
+                  isOpen={isOpen}
+                />
               </div>
             </div>
           </div>
