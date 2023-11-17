@@ -1,0 +1,72 @@
+[
+  {
+    "title": "SparkMaster Electricians",
+    "image": "sparkmaster_image.jpg",
+    "short_details": "Skilled electrical installations",
+    "service": "Electrician",
+    "rating": 4.8
+  },
+  {
+    "title": "Wired Wizards",
+    "image": "wiredwizards_image.jpg",
+    "short_details": "Troubleshooting and repairs",
+    "service": "Electrician",
+    "rating": 4.5
+  },
+  {
+    "title": "EcoVolt Solutions",
+    "image": "ecovolt_image.jpg",
+    "short_details": "Green energy solutions",
+    "service": "Electrician",
+    "rating": 4.9
+  },
+  {
+    "title": "LightningFix Electricians",
+    "image": "lightningfix_image.jpg",
+    "short_details": "24/7 emergency electrical services",
+    "service": "Electrician",
+    "rating": 4.7
+  },
+  {
+    "title": "PowerPros Electrical",
+    "image": "powerpros_image.jpg",
+    "short_details": "Residential and commercial wiring",
+    "service": "Electrician",
+    "rating": 4.6
+  },
+  {
+    "title": "CurrentCare Electricians",
+    "image": "currentcare_image.jpg",
+    "short_details": "Electric panel upgrades and maintenance",
+    "service": "Electrician",
+    "rating": 4.8
+  },
+  {
+    "title": "EliteLight Electricians",
+    "image": "elitelight_image.jpg",
+    "short_details": "Specializing in lighting solutions",
+    "service": "Electrician",
+    "rating": 4.4
+  },
+  {
+    "title": "BrightVolt Electricians",
+    "image": "brightvolt_image.jpg",
+    "short_details": "Efficient electrical system optimization",
+    "service": "Electrician",
+    "rating": 4.9
+  },
+  {
+    "title": "SmartWire Solutions",
+    "image": "smartwire_image.jpg",
+    "short_details": "Smart home electrical installations",
+    "service": "Electrician",
+    "rating": 4.7
+  },
+  {
+    "title": "AmpedUp Electricians",
+    "image": "ampedup_image.jpg",
+    "short_details": "High-voltage electrical services",
+    "service": "Electrician",
+    "rating": 4.5
+  }
+]

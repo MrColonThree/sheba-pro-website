@@ -1,0 +1,72 @@
+[
+  {
+    "title": "SwiftFlow Plumbers",
+    "image": "swiftflow_image.jpg",
+    "short_details": "24/7 emergency plumbing services",
+    "service": "Plumber",
+    "rating": 4.8
+  },
+  {
+    "title": "PipingPros Solutions",
+    "image": "pipingpros_image.jpg",
+    "short_details": "Residential and commercial plumbing",
+    "service": "Plumber",
+    "rating": 4.5
+  },
+  {
+    "title": "AquaFix Masters",
+    "image": "aquafix_image.jpg",
+    "short_details": "Expert leak detection and repair",
+    "service": "Plumber",
+    "rating": 4.9
+  },
+  {
+    "title": "FlowTech Plumbing",
+    "image": "flowtech_image.jpg",
+    "short_details": "Pipe installation and maintenance",
+    "service": "Plumber",
+    "rating": 4.7
+  },
+  {
+    "title": "ProDrain Solutions",
+    "image": "prodrain_image.jpg",
+    "short_details": "Clogged drain specialists",
+    "service": "Plumber",
+    "rating": 4.6
+  },
+  {
+    "title": "EcoFlow Plumbing",
+    "image": "ecoflow_image.jpg",
+    "short_details": "Environmentally friendly plumbing services",
+    "service": "Plumber",
+    "rating": 4.8
+  },
+  {
+    "title": "RapidRise Plumbers",
+    "image": "rapidrise_image.jpg",
+    "short_details": "Swift response for plumbing emergencies",
+    "service": "Plumber",
+    "rating": 4.4
+  },
+  {
+    "title": "BlueWave Plumbing",
+    "image": "bluewave_image.jpg",
+    "short_details": "Specializing in water heater installation",
+    "service": "Plumber",
+    "rating": 4.9
+  },
+  {
+    "title": "UrbanFlow Plumbers",
+    "image": "urbanflow_image.jpg",
+    "short_details": "City-wide plumbing solutions",
+    "service": "Plumber",
+    "rating": 4.7
+  },
+  {
+    "title": "AllStar Plumbing Services",
+    "image": "allstarplumbing_image.jpg",
+    "short_details": "Reliable plumbing for homes and businesses",
+    "service": "Plumber",
+    "rating": 4.5
+  }
+]

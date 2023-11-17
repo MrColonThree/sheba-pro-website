@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Speedy Deliveries Inc.",
+    "image": "speedydeliveries_image.jpg",
+    "short_details": "Fast and reliable local delivery",
+    "service": "Delivery",
+    "rating": 4.7
+  },
+  {
+    "title": "Doorstep Couriers",
+    "image": "doorstepcouriers_image.jpg",
+    "short_details": "Same-day delivery services",
+    "service": "Delivery",
+    "rating": 4.6
+  },
+  {
+    "title": "Express Shippers",
+    "image": "expressshippers_image.jpg",
+    "short_details": "Nationwide delivery solutions",
+    "service": "Delivery",
+    "rating": 4.9
+  },
+  {
+    "title": "SwiftSend Logistics",
+    "image": "swiftsend_image.jpg",
+    "short_details": "Quick and efficient package delivery",
+    "service": "Delivery",
+    "rating": 4.8
+  },
+  {
+    "title": "PrimeMover Deliveries",
+    "image": "primemover_image.jpg",
+    "short_details": "Premium delivery services",
+    "service": "Delivery",
+    "rating": 4.5
+  },
+  {
+    "title": "CitySwift Couriers",
+    "image": "cityswift_image.jpg",
+    "short_details": "Urban delivery specialists",
+    "service": "Delivery",
+    "rating": 4.9
+  },
+  {
+    "title": "QuickDispatch Services",
+    "image": "quickdispatch_image.jpg",
+    "short_details": "Prompt delivery for urgent packages",
+    "service": "Delivery",
+    "rating": 4.7
+  },
+  {
+    "title": "ReliableRiders Couriers",
+    "image": "reliableriders_image.jpg",
+    "short_details": "Trusted motorcycle delivery services",
+    "service": "Delivery",
+    "rating": 4.6
+  },
+  {
+    "title": "SwiftFreight Logistics",
+    "image": "swiftfreight_image.jpg",
+    "short_details": "Freight and cargo transportation",
+    "service": "Delivery",
+    "rating": 4.8
+  },
+  {
+    "title": "DoorDash Deliveries",
+    "image": "doordash_image.jpg",
+    "short_details": "Door-to-door delivery solutions",
+    "service": "Delivery",
+    "rating": 4.7
+  }
+]

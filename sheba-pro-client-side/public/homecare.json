@@ -1,0 +1,72 @@
+[
+  {
+    "title": "CleanSweep Services",
+    "image": "cleansweep_image.jpg",
+    "short_details": "Cleaning and janitorial services",
+    "service": "HomeCare",
+    "rating": 4.8
+  },
+  {
+    "title": "Garden Guardians",
+    "image": "gardenguardians_image.jpg",
+    "short_details": "Landscaping and garden maintenance",
+    "service": "HomeCare",
+    "rating": 4.9
+  },
+  {
+    "title": "FixIt Home Repairs",
+    "image": "fixitrepairs_image.jpg",
+    "short_details": "Household repairs and maintenance",
+    "service": "HomeCare",
+    "rating": 4.7
+  },
+  {
+    "title": "PetCare Professionals",
+    "image": "petcarepros_image.jpg",
+    "short_details": "Pet sitting and grooming services",
+    "service": "HomeCare",
+    "rating": 4.6
+  },
+  {
+    "title": "ComfortZone HVAC",
+    "image": "comfortzone_image.jpg",
+    "short_details": "Heating and cooling system maintenance",
+    "service": "HomeCare",
+    "rating": 4.9
+  },
+  {
+    "title": "HandyHelpers Services",
+    "image": "handyhelpers_image.jpg",
+    "short_details": "General handyman and odd jobs",
+    "service": "HomeCare",
+    "rating": 4.7
+  },
+  {
+    "title": "Spotless Shine Cleaners",
+    "image": "spotlessshine_image.jpg",
+    "short_details": "Professional deep cleaning services",
+    "service": "HomeCare",
+    "rating": 4.8
+  },
+  {
+    "title": "PestControl Pros",
+    "image": "pestcontrolpros_image.jpg",
+    "short_details": "Pest extermination and prevention",
+    "service": "HomeCare",
+    "rating": 4.6
+  },
+  {
+    "title": "OrganizedLiving Services",
+    "image": "organizedliving_image.jpg",
+    "short_details": "Home organization and decluttering",
+    "service": "HomeCare",
+    "rating": 4.9
+  },
+  {
+    "title": "GreenThumb Landscapers",
+    "image": "greenthumb_image.jpg",
+    "short_details": "Environmentally friendly landscaping",
+    "service": "HomeCare",
+    "rating": 4.7
+  }
+]

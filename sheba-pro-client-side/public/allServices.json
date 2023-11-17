@@ -1,0 +1,722 @@
+[
+  {
+    "title": "Speedy Deliveries Inc.",
+    "image": "speedydeliveries_image.jpg",
+    "short_details": "Fast and reliable local delivery",
+    "service": "Delivery",
+    "rating": 4.7,
+    "price": {
+      "min": 150,
+      "max": 300
+    },
+    "long_details": "Speedy Deliveries Inc. offers local delivery services with a price range between $150 and $300. We guarantee quick and secure delivery within the specified time frame."
+  },
+  {
+    "title": "Doorstep Couriers",
+    "image": "doorstepcouriers_image.jpg",
+    "short_details": "Same-day delivery services",
+    "service": "Delivery",
+    "rating": 4.6,
+    "price": {
+      "min": 120,
+      "max": 250
+    },
+    "long_details": "Doorstep Couriers provides same-day delivery services ranging from $120 to $250. Our priority is ensuring timely deliveries for our customers."
+  },
+  {
+    "title": "Express Shippers",
+    "image": "expressshippers_image.jpg",
+    "short_details": "Nationwide delivery solutions",
+    "service": "Delivery",
+    "rating": 4.9,
+    "price": {
+      "min": 200,
+      "max": 400
+    },
+    "long_details": "Express Shippers specializes in nationwide delivery solutions, starting from $200 and ranging up to $400. Trust us for secure and timely delivery services across the country."
+  },
+  {
+    "title": "SwiftSend Logistics",
+    "image": "swiftsend_image.jpg",
+    "short_details": "Quick and efficient package delivery",
+    "service": "Delivery",
+    "rating": 4.8,
+    "price": {
+      "min": 180,
+      "max": 320
+    },
+    "long_details": "SwiftSend Logistics ensures quick and efficient package delivery within the range of $180 to $320. We prioritize efficiency and security in every delivery."
+  },
+  {
+    "title": "PrimeMover Deliveries",
+    "image": "primemover_image.jpg",
+    "short_details": "Premium delivery services",
+    "service": "Delivery",
+    "rating": 4.5,
+    "price": {
+      "min": 160,
+      "max": 280
+    },
+    "long_details": "PrimeMover Deliveries offers premium delivery services with prices ranging between $160 and $280. We ensure the utmost care and attention for your packages."
+  },
+  {
+    "title": "CitySwift Couriers",
+    "image": "cityswift_image.jpg",
+    "short_details": "Urban delivery specialists",
+    "service": "Delivery",
+    "rating": 4.9,
+    "price": {
+      "min": 190,
+      "max": 330
+    },
+    "long_details": "CitySwift Couriers are specialists in urban delivery, with prices starting at $190 and reaching up to $330. Trust us for efficient and reliable deliveries in city areas."
+  },
+  {
+    "title": "QuickDispatch Services",
+    "image": "quickdispatch_image.jpg",
+    "short_details": "Prompt delivery for urgent packages",
+    "service": "Delivery",
+    "rating": 4.7,
+    "price": {
+      "min": 170,
+      "max": 290
+    },
+    "long_details": "QuickDispatch Services guarantees prompt delivery for urgent packages with prices ranging from $170 to $290. We prioritize speed and reliability in every delivery."
+  },
+  {
+    "title": "ReliableRiders Couriers",
+    "image": "reliableriders_image.jpg",
+    "short_details": "Trusted motorcycle delivery services",
+    "service": "Delivery",
+    "rating": 4.6,
+    "price": {
+      "min": 140,
+      "max": 260
+    },
+    "long_details": "ReliableRiders Couriers specialize in trusted motorcycle delivery services with prices starting at $140 and reaching up to $260. Trust our experienced riders for safe and secure deliveries."
+  },
+  {
+    "title": "SwiftFreight Logistics",
+    "image": "swiftfreight_image.jpg",
+    "short_details": "Freight and cargo transportation",
+    "service": "Delivery",
+    "rating": 4.8,
+    "price": {
+      "min": 220,
+      "max": 360
+    },
+    "long_details": "SwiftFreight Logistics offers freight and cargo transportation services with prices ranging from $220 to $360. We ensure efficient handling and delivery of your cargo."
+  },
+  {
+    "title": "DoorDash Deliveries",
+    "image": "doordash_image.jpg",
+    "short_details": "Door-to-door delivery solutions",
+    "service": "Delivery",
+    "rating": 4.7,
+    "price": {
+      "min": 180,
+      "max": 300
+    },
+    "long_details": "DoorDash Deliveries provide door-to-door delivery solutions with prices ranging between $180 and $300. Experience convenience with our efficient delivery services."
+  },
+  {
+    "title": "SparkMaster Electricians",
+    "image": "sparkmaster_image.jpg",
+    "short_details": "Skilled electrical installations",
+    "service": "Electrician",
+    "rating": 4.8,
+    "price": {
+      "min": 200,
+      "max": 400
+    },
+    "long_details": "SparkMaster Electricians provide skilled electrical installations with prices ranging from $200 to $400. We ensure top-notch quality in every installation project."
+  },
+  {
+    "title": "Wired Wizards",
+    "image": "wiredwizards_image.jpg",
+    "short_details": "Troubleshooting and repairs",
+    "service": "Electrician",
+    "rating": 4.5,
+    "price": {
+      "min": 150,
+      "max": 300
+    },
+    "long_details": "Wired Wizards specialize in troubleshooting and repairs with prices ranging between $150 and $300. Count on us for reliable solutions to electrical issues."
+  },
+  {
+    "title": "EcoVolt Solutions",
+    "image": "ecovolt_image.jpg",
+    "short_details": "Green energy solutions",
+    "service": "Electrician",
+    "rating": 4.9,
+    "price": {
+      "min": 250,
+      "max": 500
+    },
+    "long_details": "EcoVolt Solutions offer green energy solutions at prices starting from $250 and reaching up to $500. Join us in promoting sustainable energy practices."
+  },
+  {
+    "title": "LightningFix Electricians",
+    "image": "lightningfix_image.jpg",
+    "short_details": "24/7 emergency electrical services",
+    "service": "Electrician",
+    "rating": 4.7,
+    "price": {
+      "min": 180,
+      "max": 350
+    },
+    "long_details": "LightningFix Electricians provide 24/7 emergency electrical services with prices ranging between $180 and $350. We ensure quick response and resolution."
+  },
+  {
+    "title": "PowerPros Electrical",
+    "image": "powerpros_image.jpg",
+    "short_details": "Residential and commercial wiring",
+    "service": "Electrician",
+    "rating": 4.6,
+    "price": {
+      "min": 170,
+      "max": 320
+    },
+    "long_details": "PowerPros Electrical specialize in residential and commercial wiring with prices starting at $170 and going up to $320. Trust our expertise for safe and efficient wiring."
+  },
+  {
+    "title": "CurrentCare Electricians",
+    "image": "currentcare_image.jpg",
+    "short_details": "Electric panel upgrades and maintenance",
+    "service": "Electrician",
+    "rating": 4.8,
+    "price": {
+      "min": 220,
+      "max": 420
+    },
+    "long_details": "CurrentCare Electricians offer electric panel upgrades and maintenance services with prices ranging from $220 to $420. Ensure the safety and efficiency of your electrical panels with us."
+  },
+  {
+    "title": "EliteLight Electricians",
+    "image": "elitelight_image.jpg",
+    "short_details": "Specializing in lighting solutions",
+    "service": "Electrician",
+    "rating": 4.4,
+    "price": {
+      "min": 190,
+      "max": 380
+    },
+    "long_details": "EliteLight Electricians specialize in lighting solutions with prices starting at $190 and going up to $380. Illuminate your space with our expert lighting solutions."
+  },
+  {
+    "title": "BrightVolt Electricians",
+    "image": "brightvolt_image.jpg",
+    "short_details": "Efficient electrical system optimization",
+    "service": "Electrician",
+    "rating": 4.9,
+    "price": {
+      "min": 270,
+      "max": 500
+    },
+    "long_details": "BrightVolt Electricians focus on efficient electrical system optimization with prices ranging between $270 and $500. Optimize your electrical systems for better performance."
+  },
+  {
+    "title": "SmartWire Solutions",
+    "image": "smartwire_image.jpg",
+    "short_details": "Smart home electrical installations",
+    "service": "Electrician",
+    "rating": 4.7,
+    "price": {
+      "min": 230,
+      "max": 450
+    },
+    "long_details": "SmartWire Solutions specialize in smart home electrical installations at prices starting from $230 and reaching up to $450. Make your home smarter with our installations."
+  },
+  {
+    "title": "AmpedUp Electricians",
+    "image": "ampedup_image.jpg",
+    "short_details": "High-voltage electrical services",
+    "service": "Electrician",
+    "rating": 4.5,
+    "price": {
+      "min": 180,
+      "max": 350
+    },
+    "long_details": "AmpedUp Electricians offer high-voltage electrical services with prices ranging between $180 and $350. Trust our expertise for high-power electrical solutions."
+  },
+  {
+    "title": "EliteEvent Planners",
+    "image": "eliteevent_image.jpg",
+    "short_details": "Luxury event planning and coordination",
+    "service": "Event Services",
+    "rating": 4.9,
+    "price": {
+      "min": 1000,
+      "max": 5000
+    },
+    "long_details": "EliteEvent Planners offer luxury event planning and coordination services with prices ranging from $1000 to $5000. Experience elegance and sophistication in your events with our expert planning."
+  },
+  {
+    "title": "CateringMasters",
+    "image": "cateringmasters_image.jpg",
+    "short_details": "Exquisite catering services for events",
+    "service": "Event Services",
+    "rating": 4.8,
+    "price": {
+      "min": 800,
+      "max": 4000
+    },
+    "long_details": "CateringMasters provide exquisite catering services for events with prices starting from $800 and reaching up to $4000. Delight your guests with our culinary expertise."
+  },
+  {
+    "title": "StageStar Productions",
+    "image": "stagestar_image.jpg",
+    "short_details": "Stage and lighting setup for events",
+    "service": "Event Services",
+    "rating": 4.7,
+    "price": {
+      "min": 600,
+      "max": 3000
+    },
+    "long_details": "StageStar Productions specialize in stage and lighting setup for events with prices ranging between $600 and $3000. Create captivating settings with our stage and lighting arrangements."
+  },
+  {
+    "title": "SoundWave DJs",
+    "image": "soundwave_image.jpg",
+    "short_details": "Professional DJ services for parties",
+    "service": "Event Services",
+    "rating": 4.6,
+    "price": {
+      "min": 500,
+      "max": 2500
+    },
+    "long_details": "SoundWave DJs offer professional DJ services for parties at prices starting from $500 and going up to $2500. Set the mood and rhythm for your events with our music."
+  },
+  {
+    "title": "FloralFinesse Decorators",
+    "image": "floralfinesse_image.jpg",
+    "short_details": "Floral arrangements and event decor",
+    "service": "Event Services",
+    "rating": 4.9,
+    "price": {
+      "min": 700,
+      "max": 3500
+    },
+    "long_details": "FloralFinesse Decorators specialize in floral arrangements and event decor with prices ranging between $700 and $3500. Transform spaces with our exquisite floral designs."
+  },
+  {
+    "title": "CaptureMoments Photography",
+    "image": "capturemoments_image.jpg",
+    "short_details": "Event and portrait photography",
+    "service": "Event Services",
+    "rating": 4.8,
+    "price": {
+      "min": 900,
+      "max": 4500
+    },
+    "long_details": "CaptureMoments Photography provides event and portrait photography services with prices starting at $900 and reaching up to $4500. Preserve memories beautifully with our photography."
+  },
+  {
+    "title": "RentAll Party Supplies",
+    "image": "rentall_image.jpg",
+    "short_details": "Rental services for event supplies",
+    "service": "Event Services",
+    "rating": 4.7,
+    "price": {
+      "min": 400,
+      "max": 2000
+    },
+    "long_details": "RentAll Party Supplies offer rental services for event supplies with prices ranging between $400 and $2000. Find all your event essentials with us."
+  },
+  {
+    "title": "SecurityGuard Solutions",
+    "image": "securityguard_image.jpg",
+    "short_details": "Event security and crowd control",
+    "service": "Event Services",
+    "rating": 4.6,
+    "price": {
+      "min": 550,
+      "max": 2750
+    },
+    "long_details": "SecurityGuard Solutions specialize in event security and crowd control services with prices starting at $550 and going up to $2750. Ensure safety and order at your events with our professional security."
+  },
+  {
+    "title": "EventTech Solutions",
+    "image": "eventtech_image.jpg",
+    "short_details": "Technology support for events",
+    "service": "Event Services",
+    "rating": 4.9,
+    "price": {
+      "min": 750,
+      "max": 3750
+    },
+    "long_details": "EventTech Solutions provide technology support for events at prices ranging between $750 and $3750. Ensure seamless tech operations during your events with our expertise."
+  },
+  {
+    "title": "TransportEase Services",
+    "image": "transportease_image.jpg",
+    "short_details": "Event transportation solutions",
+    "service": "Event Services",
+    "rating": 4.8,
+    "price": {
+      "min": 650,
+      "max": 3250
+    },
+    "long_details": "TransportEase Services offer event transportation solutions with prices starting from $650 and going up to $3250. Ensure smooth and timely transport arrangements for your events."
+  },
+  {
+    "title": "CleanSweep Services",
+    "image": "cleansweep_image.jpg",
+    "short_details": "Cleaning and janitorial services",
+    "service": "HomeCare",
+    "rating": 4.8,
+    "price": {
+      "min": 80,
+      "max": 200
+    },
+    "long_details": "CleanSweep Services offer cleaning and janitorial services starting at $80 and reaching up to $200. We provide thorough and efficient cleaning solutions for your spaces."
+  },
+  {
+    "title": "Garden Guardians",
+    "image": "gardenguardians_image.jpg",
+    "short_details": "Landscaping and garden maintenance",
+    "service": "HomeCare",
+    "rating": 4.9,
+    "price": {
+      "min": 100,
+      "max": 300
+    },
+    "long_details": "Garden Guardians specialize in landscaping and garden maintenance, with prices ranging from $100 to $300. Transform your outdoor spaces with our expert care."
+  },
+  {
+    "title": "FixIt Home Repairs",
+    "image": "fixitrepairs_image.jpg",
+    "short_details": "Household repairs and maintenance",
+    "service": "HomeCare",
+    "rating": 4.7,
+    "price": {
+      "min": 90,
+      "max": 250
+    },
+    "long_details": "FixIt Home Repairs cater to household repairs and maintenance, with prices starting at $90 and going up to $250. Trust us for reliable home fixes."
+  },
+  {
+    "title": "PetCare Professionals",
+    "image": "petcarepros_image.jpg",
+    "short_details": "Pet sitting and grooming services",
+    "service": "HomeCare",
+    "rating": 4.6,
+    "price": {
+      "min": 70,
+      "max": 180
+    },
+    "long_details": "PetCare Professionals offer pet sitting and grooming services with prices ranging from $70 to $180. Keep your pets happy and well-groomed with our care."
+  },
+  {
+    "title": "ComfortZone HVAC",
+    "image": "comfortzone_image.jpg",
+    "short_details": "Heating and cooling system maintenance",
+    "service": "HomeCare",
+    "rating": 4.9,
+    "price": {
+      "min": 120,
+      "max": 300
+    },
+    "long_details": "ComfortZone HVAC specializes in heating and cooling system maintenance with prices starting at $120 and reaching up to $300. Ensure your home's comfort with our services."
+  },
+  {
+    "title": "HandyHelpers Services",
+    "image": "handyhelpers_image.jpg",
+    "short_details": "General handyman and odd jobs",
+    "service": "HomeCare",
+    "rating": 4.7,
+    "price": {
+      "min": 85,
+      "max": 220
+    },
+    "long_details": "HandyHelpers Services cover general handyman and odd jobs at prices ranging between $85 and $220. Get help with various tasks around your home."
+  },
+  {
+    "title": "Spotless Shine Cleaners",
+    "image": "spotlessshine_image.jpg",
+    "short_details": "Professional deep cleaning services",
+    "service": "HomeCare",
+    "rating": 4.8,
+    "price": {
+      "min": 95,
+      "max": 240
+    },
+    "long_details": "Spotless Shine Cleaners provide professional deep cleaning services starting at $95 and going up to $240. Experience a spotless home with our meticulous cleaning."
+  },
+  {
+    "title": "PestControl Pros",
+    "image": "pestcontrolpros_image.jpg",
+    "short_details": "Pest extermination and prevention",
+    "service": "HomeCare",
+    "rating": 4.6,
+    "price": {
+      "min": 75,
+      "max": 190
+    },
+    "long_details": "PestControl Pros specialize in pest extermination and prevention with prices ranging from $75 to $190. Keep your home free from unwanted guests."
+  },
+  {
+    "title": "OrganizedLiving Services",
+    "image": "organizedliving_image.jpg",
+    "short_details": "Home organization and decluttering",
+    "service": "HomeCare",
+    "rating": 4.9,
+    "price": {
+      "min": 80,
+      "max": 210
+    },
+    "long_details": "OrganizedLiving Services focus on home organization and decluttering, offering services starting at $80 and going up to $210. Streamline your living spaces with our organizational skills."
+  },
+  {
+    "title": "GreenThumb Landscapers",
+    "image": "greenthumb_image.jpg",
+    "short_details": "Environmentally friendly landscaping",
+    "service": "HomeCare",
+    "rating": 4.7,
+    "price": {
+      "min": 110,
+      "max": 280
+    },
+    "long_details": "GreenThumb Landscapers specialize in environmentally friendly landscaping with prices starting at $110 and reaching up to $280. Create a sustainable and beautiful outdoor environment."
+  },
+  {
+    "title": "SwiftFlow Plumbers",
+    "image": "swiftflow_image.jpg",
+    "short_details": "24/7 emergency plumbing services",
+    "service": "Plumber",
+    "rating": 4.8,
+    "price": {
+      "min": 90,
+      "max": 250
+    },
+    "long_details": "SwiftFlow Plumbers offer 24/7 emergency plumbing services with prices starting at $90 and going up to $250. Count on us for swift and reliable plumbing solutions."
+  },
+  {
+    "title": "PipingPros Solutions",
+    "image": "pipingpros_image.jpg",
+    "short_details": "Residential and commercial plumbing",
+    "service": "Plumber",
+    "rating": 4.5,
+    "price": {
+      "min": 100,
+      "max": 280
+    },
+    "long_details": "PipingPros Solutions specialize in residential and commercial plumbing services with prices ranging from $100 to $280. Trust our expertise for all plumbing needs."
+  },
+  {
+    "title": "AquaFix Masters",
+    "image": "aquafix_image.jpg",
+    "short_details": "Expert leak detection and repair",
+    "service": "Plumber",
+    "rating": 4.9,
+    "price": {
+      "min": 110,
+      "max": 300
+    },
+    "long_details": "AquaFix Masters are experts in leak detection and repair services, offering prices starting at $110 and going up to $300. We fix leaks efficiently and effectively."
+  },
+  {
+    "title": "FlowTech Plumbing",
+    "image": "flowtech_image.jpg",
+    "short_details": "Pipe installation and maintenance",
+    "service": "Plumber",
+    "rating": 4.7,
+    "price": {
+      "min": 95,
+      "max": 240
+    },
+    "long_details": "FlowTech Plumbing specializes in pipe installation and maintenance, with prices starting at $95 and reaching up to $240. Trust us for seamless pipe solutions."
+  },
+  {
+    "title": "ProDrain Solutions",
+    "image": "prodrain_image.jpg",
+    "short_details": "Clogged drain specialists",
+    "service": "Plumber",
+    "rating": 4.6,
+    "price": {
+      "min": 80,
+      "max": 210
+    },
+    "long_details": "ProDrain Solutions are clogged drain specialists offering services with prices ranging from $80 to $210. We clear your drains hassle-free."
+  },
+  {
+    "title": "EcoFlow Plumbing",
+    "image": "ecoflow_image.jpg",
+    "short_details": "Environmentally friendly plumbing services",
+    "service": "Plumber",
+    "rating": 4.8,
+    "price": {
+      "min": 100,
+      "max": 260
+    },
+    "long_details": "EcoFlow Plumbing provides environmentally friendly plumbing services, with prices starting at $100 and going up to $260. Choose eco-conscious plumbing solutions."
+  },
+  {
+    "title": "RapidRise Plumbers",
+    "image": "rapidrise_image.jpg",
+    "short_details": "Swift response for plumbing emergencies",
+    "service": "Plumber",
+    "rating": 4.4,
+    "price": {
+      "min": 85,
+      "max": 220
+    },
+    "long_details": "RapidRise Plumbers offer a swift response for plumbing emergencies, with prices ranging from $85 to $220. Count on us for quick solutions in emergencies."
+  },
+  {
+    "title": "BlueWave Plumbing",
+    "image": "bluewave_image.jpg",
+    "short_details": "Specializing in water heater installation",
+    "service": "Plumber",
+    "rating": 4.9,
+    "price": {
+      "min": 120,
+      "max": 300
+    },
+    "long_details": "BlueWave Plumbing specializes in water heater installation services, with prices starting at $120 and going up to $300. Get reliable and efficient water heater installations."
+  },
+  {
+    "title": "UrbanFlow Plumbers",
+    "image": "urbanflow_image.jpg",
+    "short_details": "City-wide plumbing solutions",
+    "service": "Plumber",
+    "rating": 4.7,
+    "price": {
+      "min": 95,
+      "max": 250
+    },
+    "long_details": "UrbanFlow Plumbers offer city-wide plumbing solutions, with prices ranging from $95 to $250. We cover all your plumbing needs across the city."
+  },
+  {
+    "title": "AllStar Plumbing Services",
+    "image": "allstarplumbing_image.jpg",
+    "short_details": "Reliable plumbing for homes and businesses",
+    "service": "Plumber",
+    "rating": 4.5,
+    "price": {
+      "min": 90,
+      "max": 230
+    },
+    "long_details": "AllStar Plumbing Services provide reliable plumbing for homes and businesses, offering services with prices starting at $90 and going up to $230. Trust our expertise for your plumbing needs."
+  },
+  {
+    "title": "TechGenius Repairs",
+    "image": "techgenius_image.jpg",
+    "short_details": "Gadget and appliance repairs",
+    "service": "Technician",
+    "rating": 4.7,
+    "price": {
+      "min": 80,
+      "max": 200
+    },
+    "long_details": "TechGenius Repairs specializes in repairing a wide range of gadgets and appliances. Our expert technicians ensure efficient and reliable repair services, restoring your devices to their optimal condition."
+  },
+  {
+    "title": "SystemSavers IT Services",
+    "image": "systemsavers_image.jpg",
+    "short_details": "IT support for businesses",
+    "service": "Technician",
+    "rating": 4.6,
+    "price": {
+      "min": 90,
+      "max": 250
+    },
+    "long_details": "SystemSavers IT Services provides comprehensive IT support tailored for businesses of all sizes. Our team offers proactive solutions and expert guidance to optimize your IT infrastructure and operations."
+  },
+  {
+    "title": "Apex Automotive Solutions",
+    "image": "apexautomotive_image.jpg",
+    "short_details": "Car maintenance and repairs",
+    "service": "Technician",
+    "rating": 4.8,
+    "price": {
+      "min": 100,
+      "max": 300
+    },
+    "long_details": "Apex Automotive Solutions delivers top-notch car maintenance and repair services. From routine maintenance to complex repairs, our skilled technicians ensure your vehicle performs at its best."
+  },
+  {
+    "title": "FixIt Pro Appliances",
+    "image": "fixitpro_image.jpg",
+    "short_details": "Home appliance repair specialists",
+    "service": "Technician",
+    "rating": 4.5,
+    "price": {
+      "min": 85,
+      "max": 220
+    },
+    "long_details": "FixIt Pro Appliances offers specialized home appliance repair services. Our team excels in diagnosing and fixing various appliance issues, ensuring your appliances function efficiently."
+  },
+  {
+    "title": "GearUp Tech Services",
+    "image": "gearup_image.jpg",
+    "short_details": "Gaming console and device repairs",
+    "service": "Technician",
+    "rating": 4.9,
+    "price": {
+      "min": 95,
+      "max": 230
+    },
+    "long_details": "GearUp Tech Services specializes in repairing gaming consoles and devices. Our experts handle all kinds of repairs, bringing back the joy of gaming with quick and reliable solutions."
+  },
+  {
+    "title": "MobileMedix Solutions",
+    "image": "mobilemedix_image.jpg",
+    "short_details": "Mobile device repairs and diagnostics",
+    "service": "Technician",
+    "rating": 4.7,
+    "price": {
+      "min": 90,
+      "max": 240
+    },
+    "long_details": "MobileMedix Solutions offers diagnostics and repairs for mobile devices. We address various issues, ensuring your devices operate smoothly, backed by our technical expertise."
+  },
+  {
+    "title": "ProTech Auto Repairs",
+    "image": "protechauto_image.jpg",
+    "short_details": "Professional automotive repairs",
+    "service": "Technician",
+    "rating": 4.8,
+    "price": {
+      "min": 100,
+      "max": 260
+    },
+    "long_details": "ProTech Auto Repairs delivers professional automotive repair services. With a focus on quality and precision, our team ensures your vehicle receives the care it deserves for optimal performance."
+  },
+  {
+    "title": "TechSupport Pros",
+    "image": "techsupportpros_image.jpg",
+    "short_details": "Comprehensive tech support services",
+    "service": "Technician",
+    "rating": 4.6,
+    "price": {
+      "min": 85,
+      "max": 210
+    },
+    "long_details": "TechSupport Pros offer comprehensive tech support services for various needs. Our team resolves technical issues efficiently, ensuring your systems operate smoothly."
+  },
+  {
+    "title": "ApplianceRx Services",
+    "image": "appliancerx_image.jpg",
+    "short_details": "Appliance diagnostics and repairs",
+    "service": "Technician",
+    "rating": 4.9,
+    "price": {
+      "min": 95,
+      "max": 250
+    },
+    "long_details": "ApplianceRx Services specializes in diagnostics and repairs for a wide range of appliances. We provide accurate diagnostics and efficient repair solutions for various appliance issues."
+  },
+  {
+    "title": "AutoCare Masters",
+    "image": "autocaremasters_image.jpg",
+    "short_details": "Full-service automotive care",
+    "service": "Technician",
+    "rating": 4.7,
+    "price": {
+      "min": 90,
+      "max": 230
+    },
+    "long_details": "AutoCare Masters offers comprehensive automotive care services. From routine maintenance to complex repairs, our skilled technicians ensure your vehicle stays in top condition."
+  }
+]

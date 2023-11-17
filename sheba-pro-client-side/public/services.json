@@ -1,0 +1,32 @@
+[
+  {
+    "service": "Plumber",
+    "short_title": "Plumbing Services",
+    "service_cover": "https://i.ibb.co/wRkfqJH/service-maintenance-worker-repairing-23-2149176719.jpg"
+  },
+  {
+    "service": "Electrician",
+    "short_title": "Electrical Services",
+    "service_cover": "https://i.ibb.co/F6tTr8g/man-electrical-technician-working-switchboard-with-fuses-uses-tablet-169016-25055.jpg"
+  },
+  {
+    "service": "Technician",
+    "short_title": "Technical Services",
+    "service_cover": "https://i.ibb.co/DRtsFzs/technician-repairing-computer-computer-hardware-repairing-upgrade-technology-1150-8861.jpg"
+  },
+  {
+    "service": "Delivery",
+    "short_title": "Delivery Services",
+    "service_cover": "https://i.ibb.co/f84zGRw/portrait-young-african-guy-accepts-order-by-phone-motorbike-holding-boxes-with-pizza-sit-his-bike-ur.jpg"
+  },
+  {
+    "service": "HomeCare",
+    "short_title": "HomeCare Services",
+    "service_cover": "https://i.ibb.co/r6BThKp/practitioner-man-doctor-helping-retiree-senior-male-wheelchair-physiotherapy-strength-exercise-48225.jpg"
+  },
+  {
+    "service": "Event Services",
+    "short_title": "Event Management",
+    "service_cover": "https://i.ibb.co/MsP6nYD/luxurious-dinner-hall-with-large-crystal-chandelier-8353-565.jpg"
+  }
+]

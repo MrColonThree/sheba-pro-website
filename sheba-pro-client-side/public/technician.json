@@ -1,0 +1,72 @@
+[
+  {
+    "title": "TechGenius Repairs",
+    "image": "techgenius_image.jpg",
+    "short_details": "Gadget and appliance repairs",
+    "service": "Technician",
+    "rating": 4.7
+  },
+  {
+    "title": "SystemSavers IT Services",
+    "image": "systemsavers_image.jpg",
+    "short_details": "IT support for businesses",
+    "service": "Technician",
+    "rating": 4.6
+  },
+  {
+    "title": "Apex Automotive Solutions",
+    "image": "apexautomotive_image.jpg",
+    "short_details": "Car maintenance and repairs",
+    "service": "Technician",
+    "rating": 4.8
+  },
+  {
+    "title": "FixIt Pro Appliances",
+    "image": "fixitpro_image.jpg",
+    "short_details": "Home appliance repair specialists",
+    "service": "Technician",
+    "rating": 4.5
+  },
+  {
+    "title": "GearUp Tech Services",
+    "image": "gearup_image.jpg",
+    "short_details": "Gaming console and device repairs",
+    "service": "Technician",
+    "rating": 4.9
+  },
+  {
+    "title": "MobileMedix Solutions",
+    "image": "mobilemedix_image.jpg",
+    "short_details": "Mobile device repairs and diagnostics",
+    "service": "Technician",
+    "rating": 4.7
+  },
+  {
+    "title": "ProTech Auto Repairs",
+    "image": "protechauto_image.jpg",
+    "short_details": "Professional automotive repairs",
+    "service": "Technician",
+    "rating": 4.8
+  },
+  {
+    "title": "TechSupport Pros",
+    "image": "techsupportpros_image.jpg",
+    "short_details": "Comprehensive tech support services",
+    "service": "Technician",
+    "rating": 4.6
+  },
+  {
+    "title": "ApplianceRx Services",
+    "image": "appliancerx_image.jpg",
+    "short_details": "Appliance diagnostics and repairs",
+    "service": "Technician",
+    "rating": 4.9
+  },
+  {
+    "title": "AutoCare Masters",
+    "image": "autocaremasters_image.jpg",
+    "short_details": "Full-service automotive care",
+    "service": "Technician",
+    "rating": 4.7
+  }
+]

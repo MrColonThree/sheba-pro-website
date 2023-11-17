@@ -1,0 +1,72 @@
+[
+  {
+    "title": "EliteEvent Planners",
+    "image": "eliteevent_image.jpg",
+    "short_details": "Luxury event planning and coordination",
+    "service": "Event Services",
+    "rating": 4.9
+  },
+  {
+    "title": "CateringMasters",
+    "image": "cateringmasters_image.jpg",
+    "short_details": "Exquisite catering services for events",
+    "service": "Event Services",
+    "rating": 4.8
+  },
+  {
+    "title": "StageStar Productions",
+    "image": "stagestar_image.jpg",
+    "short_details": "Stage and lighting setup for events",
+    "service": "Event Services",
+    "rating": 4.7
+  },
+  {
+    "title": "SoundWave DJs",
+    "image": "soundwave_image.jpg",
+    "short_details": "Professional DJ services for parties",
+    "service": "Event Services",
+    "rating": 4.6
+  },
+  {
+    "title": "FloralFinesse Decorators",
+    "image": "floralfinesse_image.jpg",
+    "short_details": "Floral arrangements and event decor",
+    "service": "Event Services",
+    "rating": 4.9
+  },
+  {
+    "title": "CaptureMoments Photography",
+    "image": "capturemoments_image.jpg",
+    "short_details": "Event and portrait photography",
+    "service": "Event Services",
+    "rating": 4.8
+  },
+  {
+    "title": "RentAll Party Supplies",
+    "image": "rentall_image.jpg",
+    "short_details": "Rental services for event supplies",
+    "service": "Event Services",
+    "rating": 4.7
+  },
+  {
+    "title": "SecurityGuard Solutions",
+    "image": "securityguard_image.jpg",
+    "short_details": "Event security and crowd control",
+    "service": "Event Services",
+    "rating": 4.6
+  },
+  {
+    "title": "EventTech Solutions",
+    "image": "eventtech_image.jpg",
+    "short_details": "Technology support for events",
+    "service": "Event Services",
+    "rating": 4.9
+  },
+  {
+    "title": "TransportEase Services",
+    "image": "transportease_image.jpg",
+    "short_details": "Event transportation solutions",
+    "service": "Event Services",
+    "rating": 4.8
+  }
+]
