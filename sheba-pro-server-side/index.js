@@ -93,6 +93,13 @@ async function run() {
       const services = await serviceCollection.find().toArray();
       res.send(services);
     });
+    // to get specific service details
+    app.get("/service/details/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await allServiceCollection.findOne(query);
+      res.send(result);
+    });
     // services related api
     app.get("/featured", async (req, res) => {
       const cursor = allServiceCollection.aggregate([{ $sample: { size: 6 } }]);

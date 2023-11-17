@@ -14,7 +14,6 @@ const Featured = () => {
       return res.data;
     },
   });
-  console.log(featured);
   if (isPending) {
     return (
       <div className="w-full ">

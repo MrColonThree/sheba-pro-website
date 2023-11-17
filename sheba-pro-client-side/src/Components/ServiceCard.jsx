@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ card }) => {
-  const { title, short_details, service, price } = card;
+  const { title, short_details, service, price, _id } = card;
   return (
     <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg flex flex-col mx-auto">
       <div className="flex-grow">
@@ -26,7 +26,7 @@ const ServiceCard = ({ card }) => {
         <h1 className="text-lg font-bold text-white">
           ${price.min} - ${price.max}
         </h1>
-        <Link>
+        <Link to={`/service/details/${_id}`}>
           <button className="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
             View details
           </button>
