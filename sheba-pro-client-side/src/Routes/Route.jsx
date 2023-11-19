@@ -7,6 +7,7 @@ import Bookings from "../Pages/Bookings/Bookings/Bookings";
 import Contact from "../Pages/Contact/Contact/Contact";
 import Services from "../Pages/Services/Services/Services";
 import ServiceDetails from "../Components/ServiceDetails";
+import DashBoard from "../Layouts/DashBoard";
 
 const Route = createBrowserRouter([
   {
@@ -18,15 +19,11 @@ const Route = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/bookings",
-        element: <Bookings />,
-      },
-      {
         path: "/contact",
         element: <Contact />,
       },
       {
-        path: "/services",
+        path: "/services/:service?",
         element: <Services />,
       },
       {
@@ -34,6 +31,16 @@ const Route = createBrowserRouter([
         element: <ServiceDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/service/details/${params.id}`),
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <DashBoard />,
+    children: [
+      {
+        path: "bookings",
+        element: <Bookings />,
       },
     ],
   },

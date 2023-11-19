@@ -3,14 +3,22 @@ import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-
+import useDateFormat from "../Hooks/useDateFormat";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
+  const [servicingDate, setServicingDate] = useState(new Date());
   const { title, service, price } = bookInfo;
   const { min, max } = price;
   const serviceCharge = Math.floor(Math.random() * (max - min + 1)) + min;
+  const presentDate = new Date();
+  const bookingDate = useDateFormat(presentDate);
+  const serviceDate = useDateFormat(servicingDate);
+  console.log(serviceDate)
   const handleBooking = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -22,6 +30,8 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
       title,
       price: serviceCharge,
       additionalInfo,
+      bookingDate,
+      serviceDate,
     };
     axiosSecure.post("/bookings", bookingInfo).then((res) => {
       if (res.data.insertedId) {
@@ -30,6 +40,7 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
       navigate("/bookings");
     });
   };
+
   return (
     <div>
       {isOpen && (
@@ -105,6 +116,39 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
                         defaultValue={serviceCharge}
                         className="block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 "
                         disabled
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-5  w-full">
+                  <div className="w-full">
+                    <label className="text-sm text-gray-700 dark:text-gray-200 flex justify-between gap-5">
+                      Booking Date
+                    </label>
+
+                    <label className="block mt-3">
+                      <input
+                        type="text"
+                        name="bookingDate"
+                        defaultValue={bookingDate}
+                        className="block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 "
+                        disabled
+                      />
+                    </label>
+                  </div>
+                  <div className="w-full">
+                    <label className="text-sm text-gray-700 dark:text-gray-200">
+                      Servicing Date
+                    </label>
+                    <label className="block mt-3">
+                      <DatePicker
+                        className=" rounded-md focus:border-red-400 focus:outline-none focus:ring focus:ring-red-300 focus:ring-opacity-40 w-full  text-sm text-gray-700 bg-white border border-gray-200 "
+                        selected={servicingDate}
+                        onChange={(date) => setServicingDate(date)}
+                        dateFormat="dd/MM/yyyy"
+                        minDate={presentDate}
+                        showIcon
+                        
                       />
                     </label>
                   </div>

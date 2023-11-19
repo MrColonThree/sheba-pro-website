@@ -190,7 +190,7 @@ const CustomizeNavbar = () => {
       </li>
       <li>
         <NavLink
-          to="/bookings"
+          to="/dashboard/bookings"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"

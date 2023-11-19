@@ -94,6 +94,13 @@ async function run() {
       const services = await serviceCollection.find().toArray();
       res.send(services);
     });
+    // allServices by specific category
+    app.get("/service/:service", async (req, res) => {
+      const service = req.params.service;
+      const query = { service: service };
+      const result = await allServiceCollection.find(query).toArray();
+      res.send(result);
+    });
     // to get specific service details
     app.get("/service/details/:id", async (req, res) => {
       const id = req.params.id;
@@ -105,6 +112,13 @@ async function run() {
     app.post("/bookings", async (req, res) => {
       const service = req.body;
       const result = await bookingCollection.insertOne(service);
+      res.send(result);
+    });
+    // to get bookings data
+    app.get("/bookings", async (req, res) => {
+      const email = req.query.email;
+      const query = { email: email };
+      const result = await bookingCollection.find(query).toArray();
       res.send(result);
     });
     // services related api
