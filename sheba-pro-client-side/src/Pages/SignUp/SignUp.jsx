@@ -22,10 +22,14 @@ const SignUp = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
 
-      updateUserProfile(data.name, data.photoURL)
+      updateUserProfile(data.name, data.photo)
         .then(() => {
-          const saveUser = { name: data.name, email: data.email };
-          axiosSecure("/users", saveUser).then((res) => {
+          const saveUser = {
+            name: data.name,
+            email: data.email,
+            role: "guest",
+          };
+          axiosSecure.post("/users", saveUser).then((res) => {
             if (res.data.insertedId) {
               reset();
               Swal.fire({
@@ -44,7 +48,27 @@ const SignUp = () => {
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((result) => console.log(result.user))
+      .then((result) => {
+        const user = result.user;
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          role: "guest",
+        };
+        axiosSecure.post("/users", saveUser).then((res) => {
+          if (res.data.insertedId) {
+            reset();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User created successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
+          }
+        });
+      })
       .catch((error) => console.log(error));
   };
   return (
@@ -134,6 +158,10 @@ const SignUp = () => {
                   placeholder="••••••••"
                   {...register("password", { required: true })}
                 />
+                <p className="mt-1 text-sm">
+                  Password must have one Uppercase one lower case, one number
+                  and one special character.
+                </p>
                 {errors.password?.type === "required" && (
                   <p className="text-red-600">Password is required</p>
                 )}
@@ -154,7 +182,7 @@ const SignUp = () => {
               </label>
               <p>
                 Already have account?
-                <Link to="/signIn" className="font-semibold text-orange-600">
+                <Link to="/signIn" className="font-semibold text-purple-600 ml-2">
                   Sign In
                 </Link>
               </p>

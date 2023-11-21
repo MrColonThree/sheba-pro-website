@@ -48,7 +48,7 @@ const ServiceDetails = () => {
               <p className="leading-relaxed">{long_details}</p>
               <div className="flex mt-5 relative">
                 <span className="title-font font-medium text-2xl text-gray-900">
-                  ${price.min} - ${price.max}
+                  ${price?.min} - ${price?.max}
                 </span>
                 <button
                   onClick={openModal}

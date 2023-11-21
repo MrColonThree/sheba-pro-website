@@ -8,6 +8,12 @@ import Contact from "../Pages/Contact/Contact/Contact";
 import Services from "../Pages/Services/Services/Services";
 import ServiceDetails from "../Components/ServiceDetails";
 import DashBoard from "../Layouts/DashBoard";
+import UserManageMent from "../Pages/Dashboard/UserManagement/UserManageMent";
+import ServiceManageMent from "../Pages/Dashboard/ServiceManagement/ServiceManageMent";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/Paymenthistory";
+import BookingManagement from "../Pages/Dashboard/BookingManagement/BookingManagement";
 
 const Route = createBrowserRouter([
   {
@@ -41,6 +47,30 @@ const Route = createBrowserRouter([
       {
         path: "bookings",
         element: <Bookings />,
+      },
+      {
+        path: "users",
+        element: <UserManageMent />,
+      },
+      {
+        path: "services",
+        element: <ServiceManageMent />,
+      },
+      {
+        path: "bookingManagement",
+        element: <BookingManagement />,
+      },
+      {
+        path: "userHome",
+        element: <UserHome />,
+      },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory />,
+      },
+      {
+        path: "adminHome",
+        element: <AdminHome />,
       },
     ],
   },

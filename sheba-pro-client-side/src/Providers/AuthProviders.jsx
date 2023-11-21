@@ -46,32 +46,32 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      // const userEmail = currentUser?.email || user?.email;
-      // const loggedUser = { email: userEmail };
-      // if (currentUser) {
-      //   axiosSecure
-      //     .post("/jwt", loggedUser, {
-      //       withCredentials: true,
-      //     })
-      //     .then((res) => {
-      //       if (res.data) {
-      //         setLoading(false);
-      //       }
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
+      if (currentUser) {
+        axiosSecure
+          .post("/jwt", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            if (res.data) {
+              setLoading(false);
+            }
 
-      //       console.log("token response", res.data);
-      //     });
-      // } else {
-      //   axiosSecure
-      //     .post("/logout", loggedUser, {
-      //       withCredentials: true,
-      //     })
-      //     .then((res) => {
-      //       if (res.data) {
-      //         setLoading(false);
-      //       }
-      //       console.log(res.data);
-      //     });
-      // }
+            console.log("token response", res.data);
+          });
+      } else {
+        axiosSecure
+          .post("/logout", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            if (res.data) {
+              setLoading(false);
+            }
+            console.log(res.data);
+          });
+      }
     });
     return () => {
       return unsubscribe();

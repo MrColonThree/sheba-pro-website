@@ -5,8 +5,10 @@ import { Helmet } from "react-helmet-async";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const SignIn = () => {
   const { signIn, googleSignIn } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
   const {
     register,
@@ -32,7 +34,13 @@ const SignIn = () => {
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then(() => {
+      .then((result) => {
+        const user = result.user;
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          role: "guest",
+        };
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -41,6 +49,18 @@ const SignIn = () => {
           timer: 1500,
         });
         navigate("/");
+        axiosSecure.post("/users", saveUser).then((res) => {
+          if (res.data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User created successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
+          }
+        });
       })
       .catch((error) => console.log(error));
   };
@@ -52,7 +72,6 @@ const SignIn = () => {
       <div className="px-4 py-10 lg:py-24 mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row shadow-2xl bg-base-100 items-center md:p-10">
           <div className="w-full mx-auto space-y-5 sm:w-8/12 md:w-6/12 lg:w-[500px] p-5 rounded-lg h-96 md:h-auto">
-            xc
             <img src={signUpImg} alt="" />
           </div>
           <div className="w-full mx-auto space-y-5 sm:w-8/12 md:w-6/12 lg:w-[500px] p-5 rounded-lg">
@@ -73,21 +92,6 @@ const SignIn = () => {
               </button>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              <label className="block">
-                <span className="block mb-1 text-sm font-medium text-gray-700">
-                  Name
-                </span>
-                <input
-                  className="w-full p-2 border rounded-lg outline-purple-600"
-                  type="text"
-                  placeholder="Your full name"
-                  name="name"
-                  {...register("name", { required: true })}
-                />
-                {errors.name && (
-                  <span className="text-red-600">Name is required</span>
-                )}
-              </label>
               <label className="block">
                 <span className="block mb-1 text-sm font-medium text-gray-700">
                   Your Email
@@ -117,7 +121,10 @@ const SignIn = () => {
               </label>
               <p>
                 Don't have an account?
-                <Link to="/signUp" className="font-semibold text-orange-600">
+                <Link
+                  to="/signUp"
+                  className="font-semibold text-purple-600 ml-2"
+                >
                   Sign Up
                 </Link>
               </p>

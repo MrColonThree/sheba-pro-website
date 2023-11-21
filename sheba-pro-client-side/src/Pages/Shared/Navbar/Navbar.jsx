@@ -28,6 +28,7 @@ import {
 import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { LuPhoneCall } from "react-icons/lu";
+import { MdMiscellaneousServices } from "react-icons/md";
 import useAuth from "../../../Hooks/useAuth";
 
 function ProfileMenu() {
@@ -164,7 +165,7 @@ const CustomizeNavbar = () => {
           variant="small"
         >
           <button className="flex items-center gap-2">
-            <AiOutlineAppstoreAdd className="text-xl" />
+            <MdMiscellaneousServices className="text-xl" />
             Our Services
           </button>
         </NavLink>
@@ -188,6 +189,27 @@ const CustomizeNavbar = () => {
           </button>
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/dashboard/userHome"
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-red-900"
+                : " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent text-red-500 hover:text-red-900 md:p-0"
+            }
+            aria-current="page"
+            variant="small"
+          >
+            <button className="flex items-center gap-2">
+              <AiOutlineAppstoreAdd className="text-xl" />
+              Dashboard
+            </button>
+          </NavLink>
+        </li>
+      )}
       <li>
         <NavLink
           to="/dashboard/bookings"

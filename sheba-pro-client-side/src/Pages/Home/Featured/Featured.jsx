@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { DotLoader } from "react-spinners";
 import ServiceCard from "../../../Components/serviceCard";
 import SectionTitle from "../../../Components/SectionTitle";
 import Button from "../../../Components/Button/Button";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 
 const Featured = () => {
-  const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
   const { isPending, data: featured = [] } = useQuery({
     queryKey: ["featured"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/featured");
+      const res = await axiosPublic.get("/featured");
       return res.data;
     },
   });

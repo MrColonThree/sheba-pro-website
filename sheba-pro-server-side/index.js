@@ -34,22 +34,6 @@ const logger = (req, res, next) => {
   next();
 };
 
-const verifyToken = (req, res, next) => {
-  const token = req?.cookies?.token;
-
-  //if no token available
-  if (!token) {
-    return res.status(401).send({ message: "unauthorized access" });
-  }
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, decoded) => {
-    if (error) {
-      return res.status(401).send({ message: "unauthorized access" });
-    }
-    req.user = decoded;
-    next();
-  });
-};
-
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
@@ -60,15 +44,40 @@ async function run() {
       .collection("allServices");
     const serviceCollection = client.db("shebaPro").collection("services");
     const bookingCollection = client.db("shebaPro").collection("bookings");
+    const userCollection = client.db("shebaPro").collection("users");
 
+    const verifyToken = (req, res, next) => {
+      const token = req?.cookies?.token;
+      console.log(token);
+      if (!token) {
+        return res.status(401).send({ message: "unauthorized access" });
+      }
+      jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, decoded) => {
+        if (error) {
+          return res.status(401).send({ message: "unauthorized access" });
+        }
+        req.user = decoded;
+        next();
+      });
+    };
+    // verify admin middleware
+    // const verifyAdmin = async (req, res, next) => {
+    //   const email = req.decoded.email;
+    //   const query = { email: email };
+    //   const user = await userCollection.findOne(query);
+    //   const isAdmin = user?.role === "admin";
+    //   if (!isAdmin) {
+    //     return res.status(403).send({ message: "forbidden access" });
+    //   }
+    //   next();
+    // };
     // auth related api
     app.post("/jwt", logger, async (req, res) => {
       const user = req.body;
-      console.log("user for token", user);
+      // console.log("user for token", user);
       const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: "1h",
       });
-
       res
         .cookie("token", token, {
           httpOnly: true,
@@ -109,15 +118,19 @@ async function run() {
       res.send(result);
     });
     // to post booked service data
-    app.post("/bookings", async (req, res) => {
+    app.post("/bookings", verifyToken, async (req, res) => {
       const service = req.body;
       const result = await bookingCollection.insertOne(service);
       res.send(result);
     });
     // to get bookings data
-    app.get("/bookings", async (req, res) => {
+    app.get("/bookings", verifyToken, async (req, res) => {
       const email = req.query.email;
-      const query = { email: email };
+      const role = req.query.role;
+      let query = {};
+      if (role !== "admin") {
+        query.email = email;
+      }
       const result = await bookingCollection.find(query).toArray();
       res.send(result);
     });
@@ -127,7 +140,32 @@ async function run() {
       const result = await cursor.toArray();
       res.send(result);
     });
+    //  users related api
+    app.get("/users", async (req, res) => {
+      const result = await userCollection.find().toArray();
+      res.send(result);
+    });
+    app.get("/users/admin/:email", async (req, res) => {
+      const email = req.params.email;
+      const query = { email: email };
+      const user = await userCollection.findOne(query);
+      let admin = false;
+      if (user) {
+        admin = user?.role === "admin";
+      }
 
+      res.send({ admin });
+    });
+    app.post("/users", async (req, res) => {
+      const user = req.body;
+      const query = { email: user.email };
+      const isExist = await userCollection.findOne(query);
+      if (isExist) {
+        return res.send({ message: "user already exists", insertedId: null });
+      }
+      const result = await userCollection.insertOne(user);
+      res.send(result);
+    });
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(

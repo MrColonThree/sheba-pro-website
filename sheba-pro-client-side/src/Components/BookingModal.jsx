@@ -13,19 +13,20 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
   const navigate = useNavigate();
   const [servicingDate, setServicingDate] = useState(new Date());
   const { title, service, price } = bookInfo;
-  const { min, max } = price;
-  const serviceCharge = Math.floor(Math.random() * (max - min + 1)) + min;
+  // const { min, max } = price;
+  const serviceCharge =
+    Math.floor(Math.random() * (price?.max - price?.min + 1)) + price?.min;
   const presentDate = new Date();
   const bookingDate = useDateFormat(presentDate);
   const serviceDate = useDateFormat(servicingDate);
-  console.log(serviceDate)
+  console.log(serviceDate);
   const handleBooking = (e) => {
     e.preventDefault();
     const form = e.target;
     const additionalInfo = form.additionalInfo.value;
     const bookingInfo = {
-      name: user.displayName,
-      email: user.email,
+      name: user?.displayName,
+      email: user?.email,
       service,
       title,
       price: serviceCharge,
@@ -33,12 +34,14 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
       bookingDate,
       serviceDate,
     };
-    axiosSecure.post("/bookings", bookingInfo).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire("Booked!", "Congrats, booking successful.", "success");
-      }
-      navigate("/bookings");
-    });
+    axiosSecure
+      .post("/bookings", bookingInfo)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire("Booked!", "Congrats, booking successful.", "success");
+        }
+        navigate("/dashboard/bookings");
+      });
   };
 
   return (
@@ -148,7 +151,6 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
                         dateFormat="dd/MM/yyyy"
                         minDate={presentDate}
                         showIcon
-                        
                       />
                     </label>
                   </div>
