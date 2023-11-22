@@ -38,7 +38,6 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
-
   const logOut = () => {
     setLoading(true);
     return signOut(auth);

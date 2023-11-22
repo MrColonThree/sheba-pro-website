@@ -6,7 +6,7 @@ const DashBoard = () => {
       <div>
         <SideBar />
       </div>
-      <div className="border-l-2">
+      <div className="border-l-2 w-full p-5">
         <Outlet />
       </div>
     </div>

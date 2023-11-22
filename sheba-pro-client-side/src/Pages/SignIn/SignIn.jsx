@@ -40,11 +40,12 @@ const SignIn = () => {
           name: user.displayName,
           email: user.email,
           role: "guest",
+          photo: user.photoURL,
         };
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "User created successfully.",
+          title: "User logged in successfully.",
           showConfirmButton: false,
           timer: 1500,
         });

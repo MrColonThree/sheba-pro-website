@@ -12,7 +12,8 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
   const [servicingDate, setServicingDate] = useState(new Date());
-  const { title, service, price } = bookInfo;
+  const { title, service, price, service_id } = bookInfo;
+  console.log(service_id);
   // const { min, max } = price;
   const serviceCharge =
     Math.floor(Math.random() * (price?.max - price?.min + 1)) + price?.min;
@@ -33,15 +34,15 @@ const BookingModal = ({ closeModal, bookInfo, isOpen }) => {
       additionalInfo,
       bookingDate,
       serviceDate,
+      status: "Pending",
+      service_id,
     };
-    axiosSecure
-      .post("/bookings", bookingInfo)
-      .then((res) => {
-        if (res.data.insertedId) {
-          Swal.fire("Booked!", "Congrats, booking successful.", "success");
-        }
-        navigate("/dashboard/bookings");
-      });
+    axiosSecure.post("/bookings", bookingInfo).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire("Booked!", "Congrats, booking successful.", "success");
+      }
+      navigate("/dashboard/bookings");
+    });
   };
 
   return (

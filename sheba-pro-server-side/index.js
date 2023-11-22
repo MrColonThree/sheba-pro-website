@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -45,10 +46,11 @@ async function run() {
     const serviceCollection = client.db("shebaPro").collection("services");
     const bookingCollection = client.db("shebaPro").collection("bookings");
     const userCollection = client.db("shebaPro").collection("users");
+    const paymentCollection = client.db("shebaPro").collection("payments");
 
     const verifyToken = (req, res, next) => {
       const token = req?.cookies?.token;
-      console.log(token);
+      // console.log(token);
       if (!token) {
         return res.status(401).send({ message: "unauthorized access" });
       }
@@ -88,8 +90,7 @@ async function run() {
     });
 
     app.post("/logout", async (req, res) => {
-      const user = req.body;
-      console.log("Logged out", user);
+      // console.log("Logged out", user);
       res
         .clearCookie("token", {
           maxAge: 0,
@@ -134,6 +135,66 @@ async function run() {
       const result = await bookingCollection.find(query).toArray();
       res.send(result);
     });
+    // to cancel / delete bookings
+    app.delete("/bookings/:id", verifyToken, async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await bookingCollection.deleteOne(query);
+      res.send(result);
+    });
+    // to update booking status
+    app.patch("/bookings/:id", verifyToken, async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const updatedBooking = {
+        $set: {
+          status: "Confirmed",
+        },
+      };
+      const result = await bookingCollection.updateOne(filter, updatedBooking);
+      res.send(result);
+    });
+    // payment intent
+    app.post("/create-payment-intent", verifyToken, async (req, res) => {
+      const { price } = req.body;
+      const amount = parseInt(price * 100);
+      console.log(price);
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: amount,
+        currency: "inr",
+        payment_method_types: ["card"],
+      });
+      res.send({
+        clientSecret: paymentIntent.client_secret,
+      });
+    });
+    app.get("/payments/:email", verifyToken, async (req, res) => {
+      const query = { email: req.params.email };
+      // console.log(req.decoded,"ok");
+      // if (req.params.email !== req.decoded?.email) {
+      //   return res.status(403).send({ message: "forbidden access" });
+      // }
+      const result = await paymentCollection.find(query).toArray();
+      res.send(result);
+    });
+
+    app.post("/payments", verifyToken, async (req, res) => {
+      const payment = req.body;
+      console.log(payment);
+      const paymentResult = await paymentCollection.insertOne(payment);
+
+      //  carefully delete each item from the cart
+      console.log("payment info", payment);
+      const query = {
+        _id: {
+          $in: payment.bookingIds.map((id) => new ObjectId(id)),
+        },
+      };
+
+      const deleteResult = await bookingCollection.deleteMany(query);
+
+      res.send({ paymentResult, deleteResult });
+    });
     // services related api
     app.get("/featured", async (req, res) => {
       const cursor = allServiceCollection.aggregate([{ $sample: { size: 6 } }]);
@@ -141,11 +202,11 @@ async function run() {
       res.send(result);
     });
     //  users related api
-    app.get("/users", async (req, res) => {
+    app.get("/users", verifyToken, async (req, res) => {
       const result = await userCollection.find().toArray();
       res.send(result);
     });
-    app.get("/users/admin/:email", async (req, res) => {
+    app.get("/users/admin/:email", verifyToken, async (req, res) => {
       const email = req.params.email;
       const query = { email: email };
       const user = await userCollection.findOne(query);
@@ -166,6 +227,82 @@ async function run() {
       const result = await userCollection.insertOne(user);
       res.send(result);
     });
+    // to delete specific user
+    app.delete("/users/:id", verifyToken, async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await userCollection.deleteOne(query);
+      res.send(result);
+    });
+    // to update specific user's role
+    app.patch("/users/:id", verifyToken, async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const updatedUser = {
+        $set: {
+          role: "host",
+        },
+      };
+      const result = await userCollection.updateOne(filter, updatedUser);
+      res.send(result);
+    });
+    // admin stats
+    app.get("/admin-stats", verifyToken, async (req, res) => {
+      const users = await userCollection.estimatedDocumentCount();
+      const totalServices = await allServiceCollection.estimatedDocumentCount();
+      const orders = await paymentCollection.estimatedDocumentCount();
+      // revenue
+      const result = await paymentCollection
+        .aggregate([
+          {
+            $group: {
+              _id: null,
+              totalRevenue: { $sum: "$price" },
+            },
+          },
+        ])
+        .toArray();
+      const revenue = result.length > 0 ? result[0].totalRevenue : 0;
+      res.send({
+        users,
+        totalServices,
+        orders,
+        revenue,
+      });
+    });
+
+    // order status
+    app.get("/order-stats", async (req, res) => {
+      const result = await paymentCollection
+        .aggregate([
+          {
+            $unwind: "$orderedServiceIds",
+          },
+          {
+            $lookup: {
+              from: "allServices",
+              localField: "orderedServiceIds",
+              foreignField: "service_id",
+              as: "orderedServices",
+            },
+          },
+          {
+            $unwind: "$orderedServices",
+          },
+          {
+            $group: {
+              _id: "$orderedServices.service",
+              quantity: {
+                $sum: 1,
+              },
+              totalRevenue: { $sum : '$orderedServices.price' },
+            },
+          },
+        ])
+        .toArray();
+      res.send(result);
+    });
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(

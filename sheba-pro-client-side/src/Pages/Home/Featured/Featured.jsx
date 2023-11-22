@@ -4,6 +4,7 @@ import ServiceCard from "../../../Components/serviceCard";
 import SectionTitle from "../../../Components/SectionTitle";
 import Button from "../../../Components/Button/Button";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   const axiosPublic = useAxiosPublic();
@@ -41,7 +42,9 @@ const Featured = () => {
         ))}
       </div>
       <div className="text-center">
-        <Button text={"View All Services"} />
+        <Link to="/services">
+          <Button text={"View All Services"} />
+        </Link>
       </div>
     </div>
   );

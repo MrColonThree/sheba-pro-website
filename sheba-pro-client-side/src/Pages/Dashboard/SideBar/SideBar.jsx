@@ -15,14 +15,44 @@ import {
 import { GrHome, GrMoney } from "react-icons/gr";
 import useAdmin from "../../../Hooks/useAdmin";
 import useAuth from "../../../Hooks/useAuth";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useBookings from "../../../Hooks/useBookings";
+import useGetUsers from "../../../Hooks/useGetUsers";
+import { DotLoader } from "react-spinners";
 export default function Sidebar() {
-  const { user } = useAuth();
-  const [admin, isLoading] = useAdmin();
+  const { user, logOut } = useAuth();
+  const [admin] = useAdmin();
+  const [bookings, isLoading] = useBookings();
+  const [users] = useGetUsers();
   console.log(admin);
+  const navigate = useNavigate();
+  const handleSignOut = () => {
+    logOut();
+    navigate("/");
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "User logged out successfully",
+      showConfirmButton: false,
+      timer: 1000,
+    });
+  };
+  if (isLoading) {
+    return (
+      <div className="w-60 flex h-screen items-center justify-center">
+        <DotLoader
+          color="#ff0800"
+          size={50}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          className="mx-auto"
+        />
+      </div>
+    );
+  }
   return (
-    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className=" w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 hidden lg:block">
       <div className="mb-2 p-4">
         <img src="/logo.png" className="h-12" alt="" />
       </div>
@@ -35,7 +65,7 @@ export default function Sidebar() {
                   <PowerIcon className="h-5 w-5" />
                 </ListItemPrefix>
                 User Home
-              </ListItem>{" "}
+              </ListItem>
             </Link>
 
             <Link to="/dashboard/bookings">
@@ -46,7 +76,7 @@ export default function Sidebar() {
                 My Bookings
                 <ListItemSuffix>
                   <Chip
-                    value="14"
+                    value={bookings?.length || 0}
                     size="sm"
                     variant="ghost"
                     color="blue-gray"
@@ -76,12 +106,6 @@ export default function Sidebar() {
               </ListItemPrefix>
               Settings
             </ListItem>
-            <ListItem>
-              <ListItemPrefix>
-                <PowerIcon className="h-5 w-5" />
-              </ListItemPrefix>
-              Log Out
-            </ListItem>
           </>
         )}
         {user && admin && (
@@ -102,7 +126,7 @@ export default function Sidebar() {
                 User Management
                 <ListItemSuffix>
                   <Chip
-                    value="14"
+                    value={users?.length}
                     size="sm"
                     variant="ghost"
                     color="blue-gray"
@@ -116,7 +140,7 @@ export default function Sidebar() {
                 <ListItemPrefix>
                   <ShoppingBagIcon className="h-5 w-5" />
                 </ListItemPrefix>
-                Service ManageMent
+                Service Management
                 <ListItemSuffix>
                   <Chip
                     value="14"
@@ -128,7 +152,7 @@ export default function Sidebar() {
                 </ListItemSuffix>
               </ListItem>
             </Link>
-            <Link to="/dashboard/bookings">
+            <Link to="/dashboard/bookingManagement">
               <ListItem>
                 <ListItemPrefix>
                   <ShoppingBagIcon className="h-5 w-5" />
@@ -136,7 +160,7 @@ export default function Sidebar() {
                 Booking Management
                 <ListItemSuffix>
                   <Chip
-                    value="14"
+                    value={bookings?.length}
                     size="sm"
                     variant="ghost"
                     color="blue-gray"
@@ -157,12 +181,6 @@ export default function Sidebar() {
               </ListItemPrefix>
               Analytics
             </ListItem>
-            <ListItem>
-              <ListItemPrefix>
-                <PowerIcon className="h-5 w-5" />
-              </ListItemPrefix>
-              Log Out
-            </ListItem>
           </>
         )}
         <Link to="/">
@@ -181,12 +199,14 @@ export default function Sidebar() {
             Services
           </ListItem>{" "}
         </Link>
-        <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
+        <button onClick={handleSignOut}>
+          <ListItem>
+            <ListItemPrefix>
+              <PowerIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Log Out
+          </ListItem>
+        </button>
       </List>
     </Card>
   );

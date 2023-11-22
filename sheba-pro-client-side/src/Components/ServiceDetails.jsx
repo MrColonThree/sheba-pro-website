@@ -5,10 +5,17 @@ import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import BookingModal from "./BookingModal";
 const ServiceDetails = () => {
-  const { title, service, long_details, price, rating, short_details } =
-    useLoaderData();
+  const {
+    title,
+    service,
+    long_details,
+    price,
+    rating,
+    short_details,
+    service_id,
+  } = useLoaderData();
   const [isOpen, setIsOpen] = useState(false);
-  const bookInfo = { title, service, price };
+  const bookInfo = { title, service, price, service_id };
   const openModal = () => {
     setIsOpen(true);
   };

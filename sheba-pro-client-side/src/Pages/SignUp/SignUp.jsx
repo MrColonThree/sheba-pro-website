@@ -28,6 +28,7 @@ const SignUp = () => {
             name: data.name,
             email: data.email,
             role: "guest",
+            photo : data.photo
           };
           axiosSecure.post("/users", saveUser).then((res) => {
             if (res.data.insertedId) {
@@ -54,6 +55,7 @@ const SignUp = () => {
           name: user.displayName,
           email: user.email,
           role: "guest",
+          photo : user.photoURL
         };
         axiosSecure.post("/users", saveUser).then((res) => {
           if (res.data.insertedId) {
